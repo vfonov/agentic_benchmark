@@ -14,7 +14,7 @@ if [[ -e $pfx/.git ]];then
 fi
 
 git init $pfx
-cp -uv README.md AGENTS.md   brain.nii.gz  sphere_cube.nii.gz  sphere.nii.gz $pfx
+cp -uv TASK.md AGENTS.md   brain.nii.gz  sphere_cube.nii.gz  sphere.nii.gz $pfx
 mkdir -p $pfx/nifti
 tar zxf nifti.tar.gz -C $pfx/nifti/
 

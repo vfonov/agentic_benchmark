@@ -3,13 +3,12 @@
 This is the single authoritative reference for AI agents working in this repository.
 Read this file before making any changes.
 
-
 ---
 
 ## 1. Repository Overview
 
 **Documentation:**
-`README.md` - task description, read when starting the project
+`TASK.md` - task description, read when starting the project
 
 **Input files:**
 `brain.nii.gz`  `sphere_cube.nii.gz`  `sphere.nii.gz` - example input files
@@ -17,24 +16,26 @@ Read this file before making any changes.
 **Dependencies:**
 ## External 
 
+You can import additional external libraries inside CMake build using FetchContent. There is a privided `libigl` and nifti c library in `nifti` if you need them. 
 
 ## Build & Test
 
 ```bash
 cd build
-cmake ..
-make -j$(nproc)
+cmake .. -DCMAKE_EXPORT_COMPILE_COMMANDS=1
+make -j$(nproc) 
 ctest --output-on-failure
 ```
+This instructions should allow you to use clangd for LSP.
 
 ## Architecture Notes
 
-Use C++ , and cmake for building. You can use libigl library for 3D objects manipulations and rendering, beware there is no X11 or OpenGL available 
+Use C++ , and cmake for building. You can use `libigl` library for 3D objects manipulations and rendering, beware there is no X11 or OpenGL available.
 
 ## Workflow Rules
 
 1. **Read before writing** — read the full function you are modifying; check `CMakeLists.txt` for dependencies
-2. **Do not download scrips without permission** - if you need something, ask user
+2. **Do not download programs without permission** - if you need something installed in the system, ask user. You can use external dependencies in CMakeLists
 3. **Permissions** - you are running inside of a container with standard user permissions, do not try to change the system or install new packages
 4. **Compile after every change** — `make` must succeed before moving on
 5. **Run tests** — if modifying logic, run `ctest --output-on-failure`

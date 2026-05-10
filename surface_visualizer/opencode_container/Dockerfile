@@ -9,11 +9,11 @@ RUN apt-get update && apt-get install -y \
     g++ bc valgrind gdb \
     cmake \
     bison flex \
-    libjpeg-dev \
-    clang-tidy \
+    libjpeg-dev libpng-dev \
+    clang-tidy cppcheck \
     xxd file zip unzip file \
     dcmtk \
-    xxd file clangd \
+    xxd file clangd  \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
