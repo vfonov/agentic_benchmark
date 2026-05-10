@@ -42,9 +42,10 @@ USER vfonov
 ENV NPM_CONFIG_PREFIX=/home/vfonov/.npm-global
 ENV PATH=$PATH:/home/vfonov/.npm-global/bin
 ENV EDITOR=nano
+ENV OPENCODE_EXPERIMENTAL_LSP_TOOL=true
 
 # Install OpenCode
-RUN npm install i -g opencode-ai@latest # current version is v1.30.0
+RUN npm install i -g opencode-ai@latest # current version is v1.14.0
 
 WORKDIR /app
 CMD ["/bin/bash"]
