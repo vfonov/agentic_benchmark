@@ -3,7 +3,6 @@ FROM ubuntu:24.04
 # 1. Install dependencies as root
 RUN apt-get update && apt-get install -y \
     curl git build-essential \
-    libglfw3-dev libgl1-mesa-dev \
     kitty-terminfo kitty-shell-integration \
     git \
     nodejs npm nano \
@@ -11,13 +10,9 @@ RUN apt-get update && apt-get install -y \
     fzf aggregate cargo-1.91 \
     cmake \
     bison flex \
-    libx11-dev x11proto-core-dev \
-    libxi6 libxi-dev \
-    libxmu6 libxmu-dev libxmu-headers \
-    libgl1-mesa-dev libglu1-mesa-dev \
     libjpeg-dev \
     clang-tidy \
-    xxd file libosmesa6-dev clangd \
+    xxd file clangd \
     ninja-build \
     build-essential \
     && apt-get clean \
