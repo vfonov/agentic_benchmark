@@ -20,13 +20,12 @@ tar zxf nifti.tar.gz -C $pfx/nifti/
 
 cd $pfx
 
-git add README.md AGENTS.md   brain.nii.gz  sphere_cube.nii.gz  sphere.nii.gz
+git add TASK.md AGENTS.md   brain.nii.gz  sphere_cube.nii.gz  sphere.nii.gz
 git commit -m "Initial commit with sample data and documentation"
 git add nifti
 git commit -m "Added nifti library"
 git subtree add --prefix libigl https://github.com/libigl/libigl.git main --squash
 # put libigl and nifti into target directory
 git commit -m "Add libigl as a subtree and nifti as a submodule"
-
 
 
