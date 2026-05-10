@@ -42,7 +42,7 @@ RUN mkdir -p /home/vfonov/.local/share/claude && \
     mkdir -p /home/vfonov/.local/bin && \
     chown -R vfonov:vfonov /home/vfonov
 
-
+    
 ## run as vfonov to set up claude
 USER vfonov
 ENV PATH=/home/vfonov/.local/bin:/home/vfonov/.cargo/bin:$PATH 
